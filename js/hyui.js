@@ -9,13 +9,13 @@ $(function() {
   ///////////////// 變數 ////////////////
   /*-----------------------------------*/
   var _window = $(window),
-    ww = _window.outerWidth(),
-    wh = _window.height(),
-    _body = $('body'),
-    wwNormal = 1400,
-    wwMedium = 992,
-    wwSmall = 768,
-    wwxs = 576;
+  ww = _window.outerWidth(),
+  wh = _window.height(),
+  _body = $('body'),
+  wwNormal = 1400,
+  wwMedium = 992,
+  wwSmall = 768,
+  wwxs = 576;
   /*-----------------------------------*/
   //////////// nojs 先移除////////////////
   /*-----------------------------------*/
@@ -34,10 +34,10 @@ $(function() {
   var _menu = $('.menu');
   _menu.find('li').has('ul').addClass('hasChild');
   var liHasChild = _menu.find('li.hasChild'),
-    liHasChild_level1 = $('.menu ul').children('li.hasChild'),
-    liHasChild_level2 = $('.menu ul ul').children('li.hasChild'),
-    liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild'),
-    subMenuWidth = liHasChild.first().children('ul').outerWidth();
+  liHasChild_level1 = $('.menu ul').children('li.hasChild'),
+  liHasChild_level2 = $('.menu ul ul').children('li.hasChild'),
+  liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild'),
+  subMenuWidth = liHasChild.first().children('ul').outerWidth();
   /*-----------------------------------*/
   ////////////// 行動版選單切換////////////
   /*-----------------------------------*/
@@ -45,13 +45,13 @@ $(function() {
   $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
   // var menu_status = false;
   var _sidebar = $('.sidebar'),
-    _search = $('.search'),
-    _nav = $('.navigation'),
-    _sidebarClose = $('.sidebarClose'),
-    _sidebarCtrl = $('.sidebarCtrl'),
+  _search = $('.search'),
+  _nav = $('.navigation'),
+  _sidebarClose = $('.sidebarClose'),
+  _sidebarCtrl = $('.sidebarCtrl'),
     // _overlay = $('.menu_overlay');
     _mArea = $('.m_area');
-  _sidebarCtrl.append('<span></span><span></span><span></span>');
+    _sidebarCtrl.append('<span></span><span></span><span></span>');
   // var search_mode = false;
   _sidebar.css({
     'margin-left': _sidebar.width() * -1 + 'px'
@@ -273,14 +273,14 @@ $(function() {
   function imgResize() {
     $('.imgOuter').each(function(index, el) {
       var _imgContainer = $(this),
-        cWidth = _imgContainer.width(),
-        cHeight = _imgContainer.height(),
-        ratioC = cWidth / cHeight,
-        _img = _imgContainer.find('img');
+      cWidth = _imgContainer.width(),
+      cHeight = _imgContainer.height(),
+      ratioC = cWidth / cHeight,
+      _img = _imgContainer.find('img');
       var iWidth = $(this).find('img').width(),
-        iHeight = $(this).find('img').height(),
-        ratioImg = iWidth / iHeight,
-        scaleRatio;
+      iHeight = $(this).find('img').height(),
+      ratioImg = iWidth / iHeight,
+      scaleRatio;
       if (ratioC > ratioImg) {
         scaleRatio = cWidth / iWidth;
         _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
@@ -302,14 +302,14 @@ $(function() {
   function imgResize() {
     $('.imgOuter').each(function(index, el) {
       var _imgContainer = $(this),
-        cWidth = _imgContainer.width(),
-        cHeight = _imgContainer.height(),
-        ratioC = cWidth / cHeight,
-        _img = _imgContainer.find('img');
+      cWidth = _imgContainer.width(),
+      cHeight = _imgContainer.height(),
+      ratioC = cWidth / cHeight,
+      _img = _imgContainer.find('img');
       var iWidth = $(this).find('img').width(),
-        iHeight = $(this).find('img').height(),
-        ratioImg = iWidth / iHeight,
-        scaleRatio;
+      iHeight = $(this).find('img').height(),
+      ratioImg = iWidth / iHeight,
+      scaleRatio;
       if (ratioC > ratioImg) {
         scaleRatio = cWidth / iWidth;
         _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
@@ -434,15 +434,15 @@ $(function() {
   function tabSet() {
     $('.topic_menu').each(function() {
       var _tab = $(this),
-        _tabItem = _tab.find('h4'),
-        _tabItemA = _tabItem.children('a'),
-        _tabContent = _tab.find('topic_content'),
-        tabwidth = _tab.width(),
-        tabItemHeight = _tabItem.outerHeight(),
-        tabContentHeight = _tab.find('.active').next().innerHeight(),
-        tiGap = 0,
-        tabItemLength = _tabItem.length,
-        tabItemWidth;
+      _tabItem = _tab.find('h4'),
+      _tabItemA = _tabItem.children('a'),
+      _tabContent = _tab.find('topic_content'),
+      tabwidth = _tab.width(),
+      tabItemHeight = _tabItem.outerHeight(),
+      tabContentHeight = _tab.find('.active').next().innerHeight(),
+      tiGap = 0,
+      tabItemLength = _tabItem.length,
+      tabItemWidth;
       _tab.find('.active').next('topic_content').show();
       if (ww >= wwSmall) {
         // _tabContent.css('top', tabItemHeight);
@@ -461,9 +461,9 @@ $(function() {
 
       function tabs(e) {
         var _tabItemNow = $(this).parent(),
-          tvp = _tab.offset().top,
-          tabIndex = _tabItemNow.index() / 2,
-          scollDistance = tvp + tabItemHeight * tabIndex - 60;
+        tvp = _tab.offset().top,
+        tabIndex = _tabItemNow.index() / 2,
+        scollDistance = tvp + tabItemHeight * tabIndex - 60;
         _tabItem.removeClass('active');
         _tabItemNow.addClass('active');
         if (ww <= wwSmall) {
@@ -474,7 +474,7 @@ $(function() {
           _tabItem.not('.active').next().hide();
           _tabItemNow.next().show();
           tabContentHeight = _tabItemNow.next().innerHeight();
-          _tab.height(tabContentHeight + tabItemHeight);
+          _tab.height(tabContentHeight);
         }
         e.preventDefault();
       }
